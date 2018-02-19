@@ -4,7 +4,7 @@
   "description": "A boilerplate for Electron + React + Parcel.",
   "main": "app/main/main.ts",
   "scripts": {
-    "start": "concurrently --kill-others \"yarn parcel\" \"yarn electron\"",
+    "start": "run-p parcel electron",
     "dist": "yarn parcel:build && build --dir --x64 --publish=never",
     "electron": "electron .",
     "parcel": "parcel app/renderer/index.html -p 1124 -d app/renderer/.parcel/development",
@@ -77,6 +77,7 @@
   },
   "dependencies": {
     "app-root-path": "^2.0.1",
-    "electron-is-dev": "^0.3.0"
+    "electron-is-dev": "^0.3.0",
+    "npm-run-all": "^4.1.2"
   }
 }
